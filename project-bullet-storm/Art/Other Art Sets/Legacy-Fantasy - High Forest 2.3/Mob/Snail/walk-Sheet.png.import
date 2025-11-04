@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h1jkvh85hn03"
-path="res://.godot/imported/_Spritesheet_tileset.png-cc85b9c94c5be7bbad75b29be93b4b36.ctex"
+uid="uid://cytug7yniomd5"
+path="res://.godot/imported/walk-Sheet.png-06ba6ba16be39e27d5505fd4c36b0394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Spritesheet_tileset.png"
-dest_files=["res://.godot/imported/_Spritesheet_tileset.png-cc85b9c94c5be7bbad75b29be93b4b36.ctex"]
+source_file="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/walk-Sheet.png"
+dest_files=["res://.godot/imported/walk-Sheet.png-06ba6ba16be39e27d5505fd4c36b0394.ctex"]
 
 [params]
 
