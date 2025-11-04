@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://tmhlyvb7u6bn"]
+
+[ext_resource type="Script" uid="uid://cxgtf5oatjel1" path="res://Scripts/snail.gd" id="1_qjijy"]
+[ext_resource type="Texture2D" uid="uid://trrc0pim3a7l" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/all.png" id="2_fnba0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_casb8"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqs8f"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dokh"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyufb"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdrdu"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vib7w"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2nmr"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4bte"]
+atlas = ExtResource("2_fnba0")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isgqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_casb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqs8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dokh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyufb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdrdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vib7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2nmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4bte")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2kd"]
+size = Vector2(28, 22.666668)
+
+[node name="Snail" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 45
+script = ExtResource("1_qjijy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_isgqn")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.95634794
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.6666667, 5)
+shape = SubResource("RectangleShape2D_ae2kd")
