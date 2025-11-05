@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dv4cgupapyvup"]
+[gd_scene load_steps=29 format=3 uid="uid://dv4cgupapyvup"]
 
 [ext_resource type="Script" uid="uid://58xk6834a8gd" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cw7ssrqbchlmb" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_v0iea"]
@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 16.0
+"speed": 42.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -169,10 +169,13 @@ size = Vector2(35.5, 89)
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpjfl"]
 radius = 98.005104
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(36.5, 90)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 10
 scale = Vector2(2, 2)
-collision_mask = 22
+collision_mask = 150
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -180,6 +183,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
 animation = &"Attack"
 autoplay = "Idle"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.75, 4)
@@ -192,3 +197,13 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackHitbox"]
 shape = SubResource("CircleShape2D_wpjfl")
+
+[node name="Die_Box" type="Area2D" parent="."]
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Die_Box"]
+position = Vector2(7.75, 4)
+shape = SubResource("RectangleShape2D_fkybt")
+
+[connection signal="body_entered" from="Die_Box" to="." method="_on_die_box_body_entered"]
+[connection signal="body_exited" from="Die_Box" to="." method="_on_die_box_body_exited"]

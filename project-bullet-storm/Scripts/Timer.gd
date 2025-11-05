@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		update_label()
 
 func update_label() -> void:
-	text = "Time Survived: %0.1f" % time_elapsed
+	text = "Time Survived: %d Seconds" % time_elapsed
 
 func start() -> void:
 	time_elapsed = start_time

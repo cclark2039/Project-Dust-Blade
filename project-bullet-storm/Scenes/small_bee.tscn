@@ -21,22 +21,6 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("2_ae2kd")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q6nbb"]
-atlas = ExtResource("3_s3rba")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rwpil"]
-atlas = ExtResource("3_s3rba")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_asqh8"]
-atlas = ExtResource("3_s3rba")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_51mgm"]
-atlas = ExtResource("3_s3rba")
-region = Rect2(192, 0, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_25jhk"]
 atlas = ExtResource("4_uvsrb")
 region = Rect2(0, 0, 64, 64)
@@ -51,6 +35,22 @@ region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_elsnt"]
 atlas = ExtResource("4_uvsrb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6nbb"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwpil"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asqh8"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51mgm"]
+atlas = ExtResource("3_s3rba")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y6ol0"]
@@ -70,24 +70,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q6nbb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rwpil")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_asqh8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_51mgm")
-}],
-"loop": true,
-"name": &"Fly",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -104,7 +87,24 @@ animations = [{
 }],
 "loop": true,
 "name": &"Hit",
-"speed": 10.0
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6nbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwpil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asqh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51mgm")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2kd"]
@@ -112,14 +112,15 @@ animations = [{
 [node name="Small Bee" type="CharacterBody2D"]
 z_index = 5
 scale = Vector2(3, 3)
-collision_layer = 3
+collision_layer = 2
 collision_mask = 45
+motion_mode = 1
 script = ExtResource("1_2jpai")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y6ol0")
-animation = &"Fly"
-autoplay = "Fly"
+animation = &"Walk"
+autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ae2kd")

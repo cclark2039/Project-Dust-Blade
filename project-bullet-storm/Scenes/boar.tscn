@@ -1,9 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://d0mpxq5pyd0ei"]
+[gd_scene load_steps=28 format=3 uid="uid://d0mpxq5pyd0ei"]
 
 [ext_resource type="Script" uid="uid://pwxw1b3nabco" path="res://Scripts/boar.gd" id="1_t5ix8"]
 [ext_resource type="Texture2D" uid="uid://qedi5bjer2cb" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-White.png" id="2_1q07b"]
+[ext_resource type="Texture2D" uid="uid://5kkcyyeiajh6" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-White.png" id="2_iwb0p"]
 [ext_resource type="Texture2D" uid="uid://dowyvh2eygq4n" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet-White.png" id="3_s6gi8"]
 [ext_resource type="Texture2D" uid="uid://lcvobqmi83c7" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet-White.png" id="4_iwb0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqrfr"]
+atlas = ExtResource("2_iwb0p")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix0q"]
+atlas = ExtResource("2_iwb0p")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06wm0"]
+atlas = ExtResource("2_iwb0p")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g47mu"]
+atlas = ExtResource("2_iwb0p")
+region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6gi8"]
 atlas = ExtResource("2_1q07b")
@@ -73,6 +90,23 @@ region = Rect2(240, 0, 48, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xqrfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06wm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g47mu")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s6gi8")
 }, {
 "duration": 1.0,
@@ -86,7 +120,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -109,7 +143,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,25 +166,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bttn"]
-size = Vector2(30, 26)
+size = Vector2(31.400002, 27.000004)
 
 [node name="Boar" type="CharacterBody2D"]
 z_index = 5
 scale = Vector2(5, 5)
 collision_layer = 2
-collision_mask = 37
+collision_mask = 45
+motion_mode = 1
 script = ExtResource("1_t5ix8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_pixix")
 animation = &"Walk"
 autoplay = "Idle"
-frame_progress = 0.59603995
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 3)
+position = Vector2(-3.4999976, 2.4999995)
+scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_0bttn")

@@ -5,6 +5,7 @@ const SPEED = 1000.0
 @onready var attackHitbox = $AttackHitbox
 @onready var attackShape = $AttackHitbox/CollisionShape2D
 var is_attacking = false
+var is_in_space = false
 
 func _ready() -> void:
 	# Disable attack hitbox initially
@@ -12,7 +13,7 @@ func _ready() -> void:
 	attackShape.disabled = true
 	attackHitbox.connect("body_entered", Callable(self, "_on_attack_hitbox_body_entered"))
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var directionx := Input.get_axis("ui_left", "ui_right")
 	var directiony := Input.get_axis("ui_up", "ui_down")
 
@@ -20,14 +21,15 @@ func _physics_process(delta: float) -> void:
 		start_attack()
 
 	if directionx or directiony:
-		velocity.x = directionx * SPEED
-		velocity.y = directiony * SPEED
+		velocity.x = directionx * (SPEED)
+		velocity.y = directiony * (SPEED)
 		if not is_attacking:
 			animatedSprite.play("Run")
 		if directionx >= 0:
 			animatedSprite.flip_h = false
 		else:
 			animatedSprite.flip_h = true
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
@@ -50,3 +52,16 @@ func start_attack() -> void:
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage(1)
+		
+
+func _on_die_box_body_entered(body: Node2D) -> void:
+	if body.has_method("die"):
+		is_in_space = true
+		while (is_in_space == true):
+			Global.health -= 1
+			await get_tree().create_timer(1).timeout
+
+
+func _on_die_box_body_exited(body: Node2D) -> void:
+	if body.has_method("die"): 
+		is_in_space = false
