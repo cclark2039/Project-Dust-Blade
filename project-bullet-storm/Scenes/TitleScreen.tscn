@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://wrrlustriaua"]
+
+[ext_resource type="Texture2D" uid="uid://bmeu3ns0jvoqi" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_uebgo"]
+[ext_resource type="Texture2D" uid="uid://cdoe25ugpwjqh" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="2_vmg2h"]
+
+[node name="Node" type="Node"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(643, 361.49997)
+scale = Vector2(2.6666665, 2.643382)
+texture = ExtResource("1_uebgo")
+
+[node name="Base01" type="Sprite2D" parent="."]
+position = Vector2(600, 408)
+texture = ExtResource("2_vmg2h")
