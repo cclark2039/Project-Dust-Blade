@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://d02c52bqfms83"]
+[gd_scene load_steps=19 format=4 uid="uid://d02c52bqfms83"]
 
 [ext_resource type="Texture2D" uid="uid://h1jkvh85hn03" path="res://Art/Tilsets/_Spritesheet_tileset.png" id="1_r150o"]
-[ext_resource type="Script" uid="uid://bm1h8g0laicqx" path="res://Scenes/main.gd" id="1_vy5pj"]
+[ext_resource type="Script" uid="uid://bm1h8g0laicqx" path="res://Scripts/main.gd" id="1_vy5pj"]
 [ext_resource type="PackedScene" uid="uid://dv4cgupapyvup" path="res://Scenes/player.tscn" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://r807belcp2o8" path="res://Scenes/ui.tscn" id="2_jw32o"]
 [ext_resource type="PackedScene" uid="uid://cgo0joiktg56i" path="res://Scenes/small_bee.tscn" id="3_kln2b"]
@@ -11,7 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://b0tnkxkharmqh" path="res://male_hurt7-48124.mp3" id="5_grg3l"]
 [ext_resource type="AudioStream" uid="uid://ct32eva42kbnp" path="res://male-death-sound-128357.mp3" id="6_frkhe"]
 [ext_resource type="PackedScene" uid="uid://d0mpxq5pyd0ei" path="res://Scenes/boar.tscn" id="6_v1gob"]
-[ext_resource type="Script" uid="uid://tx2kxldwj4fd" path="res://Scenes/game_over.gd" id="8_50glp"]
+[ext_resource type="Script" uid="uid://tx2kxldwj4fd" path="res://Scripts/game_over.gd" id="8_50glp"]
+[ext_resource type="Script" uid="uid://cidq0tncen76q" path="res://Scenes/upgrade_manager.gd" id="13_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://bjo5hpcygku4b" path="res://Scenes/select_upgrade_scene.tscn" id="13_frkhe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu6xs"]
 texture = ExtResource("1_r150o")
@@ -197,6 +199,10 @@ boar_scene = ExtResource("6_v1gob")
 spawn_radius = 1500.0
 max_enemies = 500
 spawn_interval = 1.0
+
+[node name="UpgradeManager" type="Node" parent="."]
+script = ExtResource("13_1p5hy")
+Upgrade_Scene = ExtResource("13_frkhe")
 
 [node name="UI" parent="." instance=ExtResource("2_jw32o")]
 

@@ -17,7 +17,7 @@ func take_damage(amount: int = 1) -> void:
 
 func die() -> void:
 	queue_free()
-	Global.score += 10
+	Global.score += 100
 
 # Common flipping logic for enemies chasing player
 func flip_toward_player():

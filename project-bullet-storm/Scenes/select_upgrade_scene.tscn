@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjo5hpcygku4b"]
+
+[ext_resource type="Script" uid="uid://b5a5p78d8kgo3" path="res://Scripts/select_upgrade.gd" id="1_1gwph"]
+[ext_resource type="PackedScene" uid="uid://cboly3jg780ou" path="res://Scenes/upgrade_card.tscn" id="1_nw3nu"]
+[ext_resource type="Script" uid="uid://nsamsj4p4w56" path="res://Scripts/upgrade_card.gd" id="2_3y8ty"]
+[ext_resource type="Texture2D" uid="uid://dvcy6kbggfk37" path="res://Art/Upgrades/Items/Box_Item_8.png" id="4_v36hx"]
+[ext_resource type="Texture2D" uid="uid://bojhokkhqvcym" path="res://Art/Upgrades/Items/Box_Item_9.png" id="5_urrm5"]
+[ext_resource type="Texture2D" uid="uid://d1vcn1es0audb" path="res://Art/Upgrades/Items/Item_Box_Powerup_0.png" id="6_mm2mc"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="SelectUpgrade" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gwph")
+
+[node name="ColorRect" type="ColorRect" parent="SelectUpgrade"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24477637, 0.24477643, 0.24477634, 0.39215687)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SelectUpgrade"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Panel" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
+layout_mode = 2
+script = ExtResource("2_3y8ty")
+icon = ExtResource("4_v36hx")
+description = "+1 Health"
+upgrade = 2
+
+[node name="Panel2" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
+layout_mode = 2
+script = ExtResource("2_3y8ty")
+icon = ExtResource("5_urrm5")
+description = "+10% Damage"
+
+[node name="Panel3" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
+layout_mode = 2
+script = ExtResource("2_3y8ty")
+icon = ExtResource("6_mm2mc")
+description = "+10% Attack Speed"
+upgrade = 1
+
+[node name="Panel4" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
+layout_mode = 2
+script = ExtResource("2_3y8ty")
