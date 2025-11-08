@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d02c52bqfms83"]
+[gd_scene load_steps=17 format=4 uid="uid://d02c52bqfms83"]
 
 [ext_resource type="Texture2D" uid="uid://h1jkvh85hn03" path="res://Art/Tilsets/_Spritesheet_tileset.png" id="1_r150o"]
 [ext_resource type="Script" uid="uid://bm1h8g0laicqx" path="res://Scenes/main.gd" id="1_vy5pj"]
@@ -6,7 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://r807belcp2o8" path="res://Scenes/ui.tscn" id="2_jw32o"]
 [ext_resource type="PackedScene" uid="uid://cgo0joiktg56i" path="res://Scenes/small_bee.tscn" id="3_kln2b"]
 [ext_resource type="Script" uid="uid://cke5uaewuquf6" path="res://Scripts/enemy_manager.gd" id="3_pbw6q"]
+[ext_resource type="AudioStream" uid="uid://ryalpch3kbuf" path="res://sword-sound-260274.mp3" id="4_bmxlf"]
 [ext_resource type="PackedScene" uid="uid://tmhlyvb7u6bn" path="res://Scenes/snail.tscn" id="4_rgh2o"]
+[ext_resource type="AudioStream" uid="uid://b0tnkxkharmqh" path="res://male_hurt7-48124.mp3" id="5_grg3l"]
+[ext_resource type="AudioStream" uid="uid://ct32eva42kbnp" path="res://male-death-sound-128357.mp3" id="6_frkhe"]
 [ext_resource type="PackedScene" uid="uid://d0mpxq5pyd0ei" path="res://Scenes/boar.tscn" id="6_v1gob"]
 [ext_resource type="Script" uid="uid://tx2kxldwj4fd" path="res://Scenes/game_over.gd" id="8_50glp"]
 
@@ -175,6 +178,15 @@ motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("4_bmxlf")
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("5_grg3l")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_frkhe")
 
 [node name="EnemyManager" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_pbw6q")

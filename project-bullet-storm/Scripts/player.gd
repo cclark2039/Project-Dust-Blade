@@ -9,6 +9,11 @@ const SPEED = 1000.0
 var is_attacking = false
 var is_in_space = false
 
+# Audio properties
+@onready var attack_sound = $AttackSound  # Add AudioStreamPlayer2D node
+@onready var hurt_sound = $HurtSound      # Add AudioStreamPlayer2D node
+@onready var death_sound = $DeathSound    # Add AudioStreamPlayer2D node
+
 func _ready() -> void:
 	# Disable attack hitbox initially
 	attackHitbox.monitoring = false
@@ -18,6 +23,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	# Check for death
 	if Global.health <= 0:
+		if death_sound:
+			death_sound.play()
+		set_physics_process(false)
+		await get_tree().create_timer(0.5).timeout
 		die()
 		return
 	
@@ -50,6 +59,8 @@ func start_attack() -> void:
 	attackHitbox.monitoring = true
 	attackShape.disabled = false
 	animatedSprite.play("Attack")
+	if attack_sound:
+		attack_sound.play()
 	await animatedSprite.animation_finished
 	attackHitbox.monitoring = false
 	attackShape.disabled = true
@@ -64,8 +75,13 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 func _on_die_box_body_entered(body: Node2D) -> void:
 	if body.has_method("die"):
 		is_in_space = true
-		while (is_in_space == true):
+		while (is_in_space == true and Global.health > 0):
 			Global.health -= 1
+			if hurt_sound:
+				hurt_sound.play()
+			modulate = Color.RED
+			await get_tree().create_timer(0.1).timeout
+			modulate = Color.WHITE
 			await get_tree().create_timer(1).timeout
 
 
@@ -76,7 +92,6 @@ func _on_die_box_body_exited(body: Node2D) -> void:
 func die():
 	# Emit the death signal
 	emit_signal("died")
-	
 	# Disable the player
 	set_physics_process(false)
 	hide()
