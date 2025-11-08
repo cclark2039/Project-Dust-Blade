@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 const SPEED = 1000.0
 @onready var animatedSprite = $AnimatedSprite2D
 @onready var attackHitbox = $AttackHitbox
@@ -14,6 +16,11 @@ func _ready() -> void:
 	attackHitbox.connect("body_entered", Callable(self, "_on_attack_hitbox_body_entered"))
 
 func _physics_process(_delta: float) -> void:
+	# Check for death
+	if Global.health <= 0:
+		die()
+		return
+	
 	var directionx := Input.get_axis("ui_left", "ui_right")
 	var directiony := Input.get_axis("ui_up", "ui_down")
 
@@ -65,3 +72,12 @@ func _on_die_box_body_entered(body: Node2D) -> void:
 func _on_die_box_body_exited(body: Node2D) -> void:
 	if body.has_method("die"): 
 		is_in_space = false
+
+func die():
+	# Emit the death signal
+	emit_signal("died")
+	
+	# Disable the player
+	set_physics_process(false)
+	hide()
+	get_tree().current_scene._on_player_died()
