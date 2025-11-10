@@ -18,7 +18,7 @@ config/icon="uid://c763v4178j0hd"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-AudioManager="*res://audio_manager.gd"
+AudioManager="*res://Scripts/audio_manager.gd"
 
 [display]
 

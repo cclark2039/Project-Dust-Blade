@@ -13,5 +13,6 @@ func game_over():
 
 
 func _on_button_pressed():
+	Global.reset()  # reset stats
 	get_tree().paused = false
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)

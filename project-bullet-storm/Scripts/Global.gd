@@ -31,4 +31,12 @@ func add_upgrade(upgrade, stats):
 		
 	
 	stats_updated.emit()
-	
+
+func reset():
+	score = 0
+	health = 100
+	damage = 1
+	attack_speed = 1
+	addHealth = 0
+	dmgMulti = 0
+	attackSpeedMulti = 0

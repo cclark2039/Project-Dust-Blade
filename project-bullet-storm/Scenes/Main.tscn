@@ -207,6 +207,7 @@ Upgrade_Scene = ExtResource("13_frkhe")
 [node name="UI" parent="." instance=ExtResource("2_jw32o")]
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("8_50glp")
 
 [node name="Panel" type="Panel" parent="GameOver"]
