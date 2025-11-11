@@ -18,3 +18,4 @@ func _input(event):
 func _quit(): 
 	get_tree().paused = false
 	queue_free()
+	Global.show_upgrades = false

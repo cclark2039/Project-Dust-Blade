@@ -9,7 +9,7 @@ signal upgrade_selected
 
 func _ready(): 
 	$VBoxContainer/MarginContainer/TextureRect.texture = icon
-	$VBoxContainer/MarginContainer2/Label. text = description
+	$VBoxContainer/MarginContainer2/Label.text = description
 	
 func apply_upgrade(): 
 	var upgradeNumber = int(description.split(" ")[0].replace("+", "").replace ("%", ""))

@@ -1,6 +1,8 @@
 extends Node
 
 #Global variables go here
+var show_upgrades = false
+var score_required_upgrade = 500
 
 var score = 0
 var health = 100

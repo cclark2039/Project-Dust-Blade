@@ -67,7 +67,7 @@ func start_attack() -> void:
 
 func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
-		body.take_damage(1)
+		body.take_damage(Global.damage)
 		
 
 func _on_die_box_body_entered(body: Node2D) -> void:

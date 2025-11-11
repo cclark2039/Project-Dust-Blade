@@ -1,10 +1,10 @@
 extends Node
 
 @export var Upgrade_Scene : PackedScene
-var hold = false
 
 func _process(_delta: float): 
-	if Global.score % 1000 == 0 and hold == false and Global.score != 0: 
-		hold = true
+	if Global.score >= Global.score_required_upgrade and Global.show_upgrades == false and Global.score != 0: 
+		Global.show_upgrades = true
 		var Upgrade = Upgrade_Scene.instantiate()
 		add_child(Upgrade)
+		Global.score_required_upgrade = int(Global.score_required_upgrade + (Global.score_required_upgrade * .25))
