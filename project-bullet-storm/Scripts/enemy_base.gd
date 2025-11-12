@@ -6,6 +6,8 @@ var current_health: int
 @export var direction_change = false
 @onready var animatedSprite = $AnimatedSprite2D
 
+@onready var healthbar = $HealthBar
+
 func _ready() -> void:
 	current_health = max_health
 
@@ -14,6 +16,9 @@ func take_damage(amount: int = 1) -> void:
 	knock_back()
 	if current_health <= 0:
 		die()
+	
+	if healthbar:
+		healthbar.health = current_health
 
 func die() -> void:
 	queue_free()

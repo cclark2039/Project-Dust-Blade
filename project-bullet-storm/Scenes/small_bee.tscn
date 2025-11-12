@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgo0joiktg56i"]
+[gd_scene load_steps=20 format=3 uid="uid://cgo0joiktg56i"]
 
 [ext_resource type="Script" uid="uid://cg25ufc0aakke" path="res://Scripts/small_bee.gd" id="1_2jpai"]
 [ext_resource type="Texture2D" uid="uid://bfh1eggwugc7n" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Attack/Attack-Sheet.png" id="2_ae2kd"]
 [ext_resource type="Texture2D" uid="uid://bt81cn43tj3f5" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Fly/Fly-Sheet.png" id="3_s3rba"]
 [ext_resource type="Texture2D" uid="uid://dm6nmjo72xfxq" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Hit/Hit-Sheet.png" id="4_uvsrb"]
+[ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="5_s3rba"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvtqh"]
 atlas = ExtResource("2_ae2kd")
@@ -124,3 +125,9 @@ autoplay = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ae2kd")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_s3rba")]
+offset_left = -18.333334
+offset_top = -34.333332
+offset_right = 17.999998
+offset_bottom = -29.666664

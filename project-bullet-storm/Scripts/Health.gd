@@ -1,4 +1,7 @@
 extends Label
 
+@export var player : Player
+
 func _process(_delta: float) -> void:
-	text = "Health: %d" % Global.health
+	if player:
+		text = "Health: %d" % player.current_health

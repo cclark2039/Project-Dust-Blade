@@ -4,7 +4,7 @@ signal upgrade_selected
 
 @export var icon: CompressedTexture2D
 @export var description : String
-@export var upgrade : Global.upgrades
+@export var upgrade : Global.Upgrades
 
 
 func _ready(): 

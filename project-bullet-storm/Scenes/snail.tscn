@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://tmhlyvb7u6bn"]
+[gd_scene load_steps=23 format=3 uid="uid://tmhlyvb7u6bn"]
 
 [ext_resource type="Script" uid="uid://cxgtf5oatjel1" path="res://Scripts/snail.gd" id="1_qjijy"]
 [ext_resource type="Texture2D" uid="uid://dgxwdqv27ui1m" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/Hide-Sheet.png" id="2_casb8"]
 [ext_resource type="Texture2D" uid="uid://trrc0pim3a7l" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/all.png" id="2_fnba0"]
+[ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="4_casb8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isgqn"]
 atlas = ExtResource("2_casb8")
@@ -149,3 +150,9 @@ frame_progress = 0.43242577
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.6666667, 5)
 shape = SubResource("RectangleShape2D_ae2kd")
+
+[node name="HealthBar" parent="." instance=ExtResource("4_casb8")]
+offset_left = -11.0
+offset_top = -16.0
+offset_right = 12.333336
+offset_bottom = -12.0

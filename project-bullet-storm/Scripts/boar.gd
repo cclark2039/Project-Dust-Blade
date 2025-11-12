@@ -6,6 +6,7 @@ extends "res://Scripts/enemy_base.gd"
 @export var charge_duration: float = 2.5
 @export var idle_after_charge: float = 3.0
 
+
 enum State { IDLE, WALK, RUN, HIT }
 var state: State = State.IDLE
 
@@ -17,6 +18,8 @@ func _ready() -> void:
 	max_health = 3
 	current_health = max_health
 	state = State.IDLE
+	
+	healthbar.init_health(max_health)
 
 func _physics_process(delta: float) -> void:
 	if not player:
