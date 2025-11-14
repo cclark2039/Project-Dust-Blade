@@ -12,7 +12,7 @@ const SPEED = 1000.0
 var is_attacking = false
 var is_in_space = false
 
-var damage: int = base_damage
+var damage: float = base_damage
 var attack_speed: float = base_attack_speed
 
 @onready var animatedSprite = $AnimatedSprite2D
@@ -29,8 +29,10 @@ func _ready() -> void:
 	attackHitbox.monitoring = false
 	attackShape.disabled = true
 	attackHitbox.connect("body_entered", Callable(self, "_on_attack_hitbox_body_entered"))
-	Global.apply_upgrades_to_player(self)	
+	Global.stats_updated.connect(_on_global_upgrades_changed)
+	Global.apply_upgrades_to_player(self)
 	healthbar.init_health(max_health)
+	
 func _physics_process(_delta: float) -> void:
 	# Check for death
 	if current_health <= 0:
@@ -68,9 +70,18 @@ func start_attack() -> void:
 	is_attacking = true
 	attackHitbox.monitoring = true
 	attackShape.disabled = false
+	
+	# stores the speed of the animation so that animation speed can be reset after attack animation
+	# increases the attack speed animation = attack speed
+	var original_speed = animatedSprite.speed_scale
+	animatedSprite.speed_scale = attack_speed
 	animatedSprite.play("Attack")
 	play_sound(attack_sound, 5)
+	
+	# resets animation speed
 	await animatedSprite.animation_finished
+	animatedSprite.speed_scale = original_speed
+	
 	attackHitbox.monitoring = false
 	attackShape.disabled = true
 	is_attacking = false
@@ -128,8 +139,9 @@ func _on_die_box_body_entered(body: Node2D) -> void:
 			modulate = Color.WHITE
 			await get_tree().create_timer(1).timeout
 
-
 func _on_die_box_body_exited(body: Node2D) -> void:
 	if body.has_method("die"):
 		is_in_space = false
 	
+func _on_global_upgrades_changed():
+	Global.apply_upgrades_to_player(self)
