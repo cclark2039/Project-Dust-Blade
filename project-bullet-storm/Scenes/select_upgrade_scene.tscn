@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjo5hpcygku4b"]
+[gd_scene load_steps=8 format=3 uid="uid://bjo5hpcygku4b"]
 
 [ext_resource type="Script" uid="uid://b5a5p78d8kgo3" path="res://Scripts/select_upgrade.gd" id="1_1gwph"]
 [ext_resource type="PackedScene" uid="uid://cboly3jg780ou" path="res://Scenes/upgrade_card.tscn" id="1_nw3nu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dvcy6kbggfk37" path="res://Art/Upgrades/Items/Box_Item_8.png" id="4_v36hx"]
 [ext_resource type="Texture2D" uid="uid://bojhokkhqvcym" path="res://Art/Upgrades/Items/Box_Item_9.png" id="5_urrm5"]
 [ext_resource type="Texture2D" uid="uid://d1vcn1es0audb" path="res://Art/Upgrades/Items/Item_Box_Powerup_0.png" id="6_mm2mc"]
+[ext_resource type="Texture2D" uid="uid://cy4jqw3xvvd2u" path="res://Art/Upgrades/Items/Item_Powerup_Drop_0.png" id="7_v36hx"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -47,8 +48,8 @@ theme_override_constants/separation = 50
 layout_mode = 2
 script = ExtResource("2_3y8ty")
 icon = ExtResource("4_v36hx")
-description = "+1 Health"
-upgrade = 2
+description = "Heal to Full"
+upgrade = 3
 
 [node name="Panel2" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
 layout_mode = 2
@@ -66,3 +67,6 @@ upgrade = 1
 [node name="Panel4" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
 layout_mode = 2
 script = ExtResource("2_3y8ty")
+icon = ExtResource("7_v36hx")
+description = "+3 Max Health"
+upgrade = 2

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cdoe25ugpwjqh" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="1_jxero"]
 [ext_resource type="Script" uid="uid://bisu75fyw6nd4" path="res://Scripts/Timer.gd" id="1_qdvrb"]
 [ext_resource type="Script" uid="uid://duaglma7vxaxd" path="res://Scripts/Score.gd" id="2_nf4gj"]
-[ext_resource type="Script" uid="uid://0g4b0e0vcqcw" path="res://Scenes/label.gd" id="3_2246s"]
+[ext_resource type="Script" uid="uid://0g4b0e0vcqcw" path="res://Scripts/label.gd" id="3_2246s"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxero"]
 

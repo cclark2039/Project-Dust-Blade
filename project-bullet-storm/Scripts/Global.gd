@@ -10,11 +10,12 @@ var score = 0
 var addHealth = 0
 var dmgMulti = 0
 var attackSpeedMulti = 0
+var full_heal = false
 
 #upgrades code
 signal stats_updated
 
-enum Upgrades {ADD_DAMAGE, ADD_ATTACK_SPEED, ADD_HEALTH} #Add more to this
+enum Upgrades {ADD_DAMAGE, ADD_ATTACK_SPEED, ADD_HEALTH, FULL_HEAL} #Add more to this
 
 #currently stats is either 1  or 10. Not fully implemented for player (WIP)
 func add_upgrade(upgrade: Upgrades, value: float):
@@ -25,6 +26,8 @@ func add_upgrade(upgrade: Upgrades, value: float):
 			attackSpeedMulti += value / 100.0
 		Upgrades.ADD_HEALTH:
 			addHealth += value
+		Upgrades.FULL_HEAL: 
+			full_heal = true
 	stats_updated.emit()
 
 func reset():
@@ -36,13 +39,15 @@ func reset():
 func apply_upgrades_to_player(player):
 	# Health upgrade
 	player.max_health += addHealth
-	player.current_health += addHealth
+	if full_heal == true:
+		player.current_health += player.max_health
+		full_heal = false
 	player.current_health = min(player.current_health, player.max_health)
 	print("Player health upgraded to: ", player.current_health)
 	if player.healthbar:
 		player.healthbar.init_health(player.max_health)
 		player.healthbar.health = player.current_health
-	
+	addHealth = 0
 	# Damage upgrade
 	player.damage = player.base_damage * (1.0 + dmgMulti)
 	print("Player damage upgraded to: ", player.damage)

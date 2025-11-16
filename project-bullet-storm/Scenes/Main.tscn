@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://ct32eva42kbnp" path="res://male-death-sound-128357.mp3" id="6_frkhe"]
 [ext_resource type="PackedScene" uid="uid://d0mpxq5pyd0ei" path="res://Scenes/boar.tscn" id="6_v1gob"]
 [ext_resource type="Script" uid="uid://tx2kxldwj4fd" path="res://Scripts/game_over.gd" id="8_50glp"]
-[ext_resource type="Script" uid="uid://cidq0tncen76q" path="res://Scenes/upgrade_manager.gd" id="13_1p5hy"]
+[ext_resource type="Script" uid="uid://cidq0tncen76q" path="res://Scripts/upgrade_manager.gd" id="13_1p5hy"]
 [ext_resource type="PackedScene" uid="uid://bjo5hpcygku4b" path="res://Scenes/select_upgrade_scene.tscn" id="13_frkhe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu6xs"]
