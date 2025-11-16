@@ -19,7 +19,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_jxero")
 
 [node name="Timer" type="Label" parent="Panel"]
 layout_mode = 1
-offset_right = 187.0
+offset_left = 5.0
+offset_right = 192.0
 offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
@@ -28,8 +29,8 @@ script = ExtResource("1_qdvrb")
 
 [node name="Score" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 1113.0
-offset_right = 1278.0
+offset_left = 1110.0
+offset_right = 1275.0
 offset_bottom = 35.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
