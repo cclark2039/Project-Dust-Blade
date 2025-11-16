@@ -5,12 +5,10 @@ extends CanvasLayer
 func _ready():
 	self.hide()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func game_over():
 	get_tree().paused = true
 	self.show()
-
 
 func _on_button_pressed():
 	Global.reset()  # reset stats

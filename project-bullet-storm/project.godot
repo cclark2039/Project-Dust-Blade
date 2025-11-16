@@ -13,7 +13,6 @@ config_version=5
 config/name="Project-Bullet-Storm"
 run/main_scene="uid://d02c52bqfms83"
 config/features=PackedStringArray("4.5", "Forward Plus")
-boot_splash/image="uid://c763v4178j0hd"
 config/icon="uid://c763v4178j0hd"
 
 [autoload]

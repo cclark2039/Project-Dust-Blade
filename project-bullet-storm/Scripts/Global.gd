@@ -2,9 +2,10 @@ extends Node
 
 #Global variables go here
 var show_upgrades = false
-var score_required_upgrade = 500
+var score_required_upgrade = 800
 
 var score = 0
+var level = 1
 
 #upgrade stats
 var addHealth = 0
@@ -25,7 +26,7 @@ func add_upgrade(upgrade: Upgrades, value: float):
 		Upgrades.ADD_ATTACK_SPEED:
 			attackSpeedMulti += value / 100.0 #10%
 		Upgrades.ADD_HEALTH:
-			addHealth += value
+			addHealth = value
 		Upgrades.FULL_HEAL: 
 			full_heal = true
 	stats_updated.emit()
@@ -39,11 +40,12 @@ func reset():
 func apply_upgrades_to_player(player):
 	# Health upgrade
 	player.max_health += addHealth
+	print("Player Max Health upgraded to: ", player.max_health)
 	if full_heal == true:
-		player.current_health += player.max_health
+		player.current_health = player.max_health
 		full_heal = false
-	player.current_health = min(player.current_health, player.max_health)
-	print("Player health upgraded to: ", player.current_health)
+	#player.current_health = min(player.current_health, player.max_health)
+	print("Player health updated to: ", player.current_health)
 	if player.healthbar:
 		player.healthbar.init_health(player.max_health)
 		player.healthbar.health = player.current_health
