@@ -21,9 +21,9 @@ enum Upgrades {ADD_DAMAGE, ADD_ATTACK_SPEED, ADD_HEALTH, FULL_HEAL} #Add more to
 func add_upgrade(upgrade: Upgrades, value: float):
 	match upgrade:
 		Upgrades.ADD_DAMAGE:
-			dmgMulti += 0.5
+			dmgMulti += value / 100 #(10%)
 		Upgrades.ADD_ATTACK_SPEED:
-			attackSpeedMulti += value / 100.0
+			attackSpeedMulti += value / 100.0 #10%
 		Upgrades.ADD_HEALTH:
 			addHealth += value
 		Upgrades.FULL_HEAL: 
