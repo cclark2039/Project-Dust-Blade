@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bug2fxorlj8xh"]
+[gd_scene load_steps=30 format=3 uid="uid://bug2fxorlj8xh"]
 
 [ext_resource type="Script" uid="uid://ipie6rsw04ln" path="res://Scripts/big_boar.gd" id="1_o1k86"]
 [ext_resource type="Texture2D" uid="uid://5kkcyyeiajh6" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-White.png" id="2_2tfma"]
@@ -173,6 +173,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bttn"]
 size = Vector2(31.400002, 27.000004)
 
+[sub_resource type="FontVariation" id="FontVariation_onrbf"]
+
 [node name="Big_Boar_Boss" type="CharacterBody2D"]
 z_index = 5
 scale = Vector2(12, 9.875)
@@ -191,30 +193,17 @@ position = Vector2(-3.4999976, 2.4999995)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_0bttn")
 
-[node name="BossL&HB" type="CanvasLayer" parent="."]
+[node name="HealthBar" parent="." instance=ExtResource("6_3wx7c")]
+offset_left = -36.500004
+offset_top = -20.253164
+offset_right = 36.583324
+offset_bottom = -16.253164
 
-[node name="HealthBar" parent="BossL&HB" instance=ExtResource("6_3wx7c")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -341.0
-offset_top = -85.0
-offset_right = 342.0
-offset_bottom = -62.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-
-[node name="Label" type="Label" parent="BossL&HB"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 300.0
-offset_top = -121.0
-offset_right = 473.0
-offset_bottom = -93.0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 20
+[node name="Label" type="Label" parent="."]
+offset_left = -16.416666
+offset_top = -34.227848
+offset_right = 16.583334
+offset_bottom = -22.227848
+theme_override_fonts/font = SubResource("FontVariation_onrbf")
+theme_override_font_sizes/font_size = 8
 text = "Big Boar"

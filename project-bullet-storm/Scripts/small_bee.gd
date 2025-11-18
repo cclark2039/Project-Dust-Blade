@@ -5,8 +5,7 @@ extends "res://Scripts/enemy_base.gd"
 func _ready() -> void:
 	max_health = 2
 	current_health = max_health
-	
-	healthbar.init_health(max_health)
+	super._ready()
 
 func _physics_process(_delta: float) -> void:
 	if player:

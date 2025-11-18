@@ -17,8 +17,7 @@ func _ready() -> void:
 	max_health = 120
 	current_health = max_health
 	state = State.IDLE
-	if healthbar:
-		healthbar.init_health(max_health)
+	super._ready()
 
 func _physics_process(delta: float) -> void:
 	if not player:

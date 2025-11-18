@@ -9,7 +9,11 @@ var current_health: int
 @onready var healthbar = $HealthBar
 
 func _ready() -> void:
-	current_health = max_health
+	if current_health == 0:
+		current_health = max_health
+	if healthbar:
+		healthbar.init_health(max_health)
+		healthbar.health = current_health
 
 func take_damage(amount: int = 1) -> void:
 	current_health -= amount

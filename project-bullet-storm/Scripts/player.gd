@@ -30,8 +30,8 @@ func _ready() -> void:
 	attackShape.disabled = true
 	attackHitbox.connect("body_entered", Callable(self, "_on_attack_hitbox_body_entered"))
 	Global.stats_updated.connect(_on_global_upgrades_changed)
-	Global.apply_upgrades_to_player(self)
 	healthbar.init_health(max_health)
+	Global.apply_upgrades_to_player(self)
 	
 func _physics_process(_delta: float) -> void:
 	# Check for death

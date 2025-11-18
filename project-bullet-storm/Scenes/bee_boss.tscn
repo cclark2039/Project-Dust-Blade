@@ -126,25 +126,16 @@ autoplay = "Walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ae2kd")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HealthBar" parent="." instance=ExtResource("5_duqwt")]
+offset_left = -40.875
+offset_top = -33.75
+offset_right = 40.875
+offset_bottom = -30.75
 
-[node name="HealthBar" parent="CanvasLayer" instance=ExtResource("5_duqwt")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -333.0
-offset_top = -86.0
-offset_right = 335.0
-offset_bottom = -64.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 310.0
-offset_top = 597.0
-offset_right = 388.0
-offset_bottom = 623.0
-theme_override_font_sizes/font_size = 18
-text = "Bee Boss"
+[node name="Label" type="Label" parent="."]
+offset_left = -22.0
+offset_top = -51.0
+offset_right = 22.0
+offset_bottom = -37.0
+theme_override_font_sizes/font_size = 10
+text = "Boss Bee"
