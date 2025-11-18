@@ -7,5 +7,6 @@ func _process(_delta: float):
 		Global.show_upgrades = true
 		var Upgrade = Upgrade_Scene.instantiate()
 		add_child(Upgrade)
-		Global.level += 1
-		Global.score_required_upgrade = Global.score_required_upgrade * (pow(Global.level, 1.4))
+		Global.score_level += 1
+		Global.score_required_upgrade = Global.base_score * pow(Global.score_level, 1.4)
+		Global.current_level += 1

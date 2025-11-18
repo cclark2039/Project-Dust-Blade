@@ -1,22 +1,26 @@
 extends Node
 
+
 #Global variables go here
 var show_upgrades = false
 var score_required_upgrade = 800
 
 var score = 0
-var level = 1
+var base_score = 800
+var score_level = 1
+var current_level = 1
 
 #upgrade stats
 var addHealth = 0
 var dmgMulti = 0
 var attackSpeedMulti = 0
-var full_heal = false
+var heal_amount = 0
+var heal = false
 
 #upgrades code
 signal stats_updated
 
-enum Upgrades {ADD_DAMAGE, ADD_ATTACK_SPEED, ADD_HEALTH, FULL_HEAL} #Add more to this
+enum Upgrades {ADD_DAMAGE, ADD_ATTACK_SPEED, ADD_HEALTH, RAND_HEAL} #Add more to this
 
 #currently stats is either 1  or 10. Not fully implemented for player (WIP)
 func add_upgrade(upgrade: Upgrades, value: float):
@@ -27,8 +31,8 @@ func add_upgrade(upgrade: Upgrades, value: float):
 			attackSpeedMulti += value / 100.0 #10%
 		Upgrades.ADD_HEALTH:
 			addHealth = value
-		Upgrades.FULL_HEAL: 
-			full_heal = true
+		Upgrades.RAND_HEAL: 
+			heal = true
 	stats_updated.emit()
 
 func reset():
@@ -38,12 +42,16 @@ func reset():
 	attackSpeedMulti = 0.0
 
 func apply_upgrades_to_player(player):
+	randomize()
 	# Health upgrade
 	player.max_health += addHealth
 	print("Player Max Health upgraded to: ", player.max_health)
-	if full_heal == true:
-		player.current_health = player.max_health
-		full_heal = false
+	if heal == true:
+		player.current_health += randi_range(5, player.max_health)
+		if player.current_health > player.max_health: 
+			player.current_health = player.max_health
+		heal = false
+	
 	#player.current_health = min(player.current_health, player.max_health)
 	print("Player health updated to: ", player.current_health)
 	if player.healthbar:

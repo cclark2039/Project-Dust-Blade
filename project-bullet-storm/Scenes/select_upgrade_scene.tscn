@@ -48,7 +48,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 script = ExtResource("2_3y8ty")
 icon = ExtResource("4_v36hx")
-description = "Heal to Full"
+description = "Heal Random Amount"
 upgrade = 3
 
 [node name="Panel2" parent="SelectUpgrade/HBoxContainer" instance=ExtResource("1_nw3nu")]
