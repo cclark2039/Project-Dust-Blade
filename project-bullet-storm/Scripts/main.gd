@@ -14,6 +14,8 @@ func _ready() -> void:
 	# Connect to player's death
 	if player.has_signal("died"):
 		player.connect("died", _on_player_died)
+		
+
 
 func _on_player_died() -> void:
 	game_over_ui.game_over()

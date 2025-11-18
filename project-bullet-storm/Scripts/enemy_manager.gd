@@ -27,13 +27,13 @@ func _process(delta: float) -> void:
 		spawn_enemy()
 		spawn_timer = 0.0
 		
-	if Global.score >= 1000 and not bee_boss_spawned:
+	if Global.current_level >= 3 and not bee_boss_spawned:
 		spawn_bee_boss()
 		
-	if Global.score >= 2000 and not snail_boss_spawned:
+	if Global.current_level >= 6 and not snail_boss_spawned:
 		spawn_snail_boss()
 		
-	if Global.score >= 3000 and not big_boar_spawned:
+	if Global.current_level >= 9 and not big_boar_spawned:
 		spawn_big_boar()
 
 func spawn_enemy() -> void:

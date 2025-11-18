@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://d02c52bqfms83"]
+[gd_scene load_steps=25 format=4 uid="uid://d02c52bqfms83"]
 
 [ext_resource type="Texture2D" uid="uid://h1jkvh85hn03" path="res://Art/Tilsets/_Spritesheet_tileset.png" id="1_r150o"]
 [ext_resource type="Script" uid="uid://bm1h8g0laicqx" path="res://Scripts/main.gd" id="1_vy5pj"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://wrrlustriaua" path="res://Scenes/TitleScreen.tscn" id="15_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://dcqtqf8o7gaba" path="res://Scenes/paused.tscn" id="16_erwvk"]
 [ext_resource type="PackedScene" uid="uid://dyxx7wr0vgksx" path="res://Scenes/bee_boss.tscn" id="17_2w5on"]
+[ext_resource type="AudioStream" uid="uid://baa1ahlrao234" path="res://american-western-country-350098.mp3" id="20_sxkr1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uu6xs"]
 texture = ExtResource("1_r150o")
@@ -188,12 +189,20 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="AttackSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("4_bmxlf")
+volume_db = -9.0
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("5_grg3l")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("6_frkhe")
+
+[node name="Background_music" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(0, 358)
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("20_sxkr1")
+volume_db = -5.0
+parameters/looping = true
 
 [node name="EnemyManager" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("3_pbw6q")

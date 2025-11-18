@@ -23,6 +23,7 @@ var attack_speed: float = base_attack_speed
 @onready var attack_sound = $AttackSound  # Add AudioStreamPlayer2D node
 @onready var hurt_sound = $HurtSound      # Add AudioStreamPlayer2D node
 @onready var death_sound = $DeathSound    # Add AudioStreamPlayer2D node
+@onready var music = $Background_music
 
 func _ready() -> void:
 	# Disable attack hitbox initially
@@ -32,6 +33,8 @@ func _ready() -> void:
 	Global.stats_updated.connect(_on_global_upgrades_changed)
 	healthbar.init_health(max_health)
 	Global.apply_upgrades_to_player(self)
+	music.play()
+	
 	
 func _physics_process(_delta: float) -> void:
 	# Check for death
