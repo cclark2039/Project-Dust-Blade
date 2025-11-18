@@ -47,7 +47,9 @@ func apply_upgrades_to_player(player):
 	#player.current_health = min(player.current_health, player.max_health)
 	print("Player health updated to: ", player.current_health)
 	if player.healthbar:
-		player.healthbar.init_health(player.max_health)
+		player.healthbar.max_value = player.max_health
+		player.healthbar.damage_bar.max_value = player.max_health
+		player.healthbar.damage_bar.value = player.current_health
 		player.healthbar.health = player.current_health
 	addHealth = 0
 	# Damage upgrade
