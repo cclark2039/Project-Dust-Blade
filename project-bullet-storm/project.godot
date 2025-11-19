@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project-Bullet-Storm"
-run/main_scene="uid://d02c52bqfms83"
+run/main_scene="uid://colq0yt0o5f5e"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://c763v4178j0hd"
 

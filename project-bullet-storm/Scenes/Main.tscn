@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d02c52bqfms83"]
+[gd_scene load_steps=24 format=4 uid="uid://d02c52bqfms83"]
 
 [ext_resource type="Texture2D" uid="uid://h1jkvh85hn03" path="res://Art/Tilsets/_Spritesheet_tileset.png" id="1_r150o"]
 [ext_resource type="Script" uid="uid://bm1h8g0laicqx" path="res://Scripts/main.gd" id="1_vy5pj"]
@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://cidq0tncen76q" path="res://Scripts/upgrade_manager.gd" id="13_1p5hy"]
 [ext_resource type="PackedScene" uid="uid://bjo5hpcygku4b" path="res://Scenes/select_upgrade_scene.tscn" id="13_frkhe"]
 [ext_resource type="PackedScene" uid="uid://dtg0u7h8h1bhn" path="res://Scenes/snail_boss.tscn" id="13_sxkr1"]
-[ext_resource type="PackedScene" uid="uid://wrrlustriaua" path="res://Scenes/TitleScreen.tscn" id="15_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://dcqtqf8o7gaba" path="res://Scenes/paused.tscn" id="16_erwvk"]
 [ext_resource type="PackedScene" uid="uid://dyxx7wr0vgksx" path="res://Scenes/bee_boss.tscn" id="17_2w5on"]
 [ext_resource type="AudioStream" uid="uid://baa1ahlrao234" path="res://american-western-country-350098.mp3" id="20_sxkr1"]
@@ -245,9 +244,6 @@ offset_right = 724.0
 offset_bottom = 446.0
 theme_override_font_sizes/font_size = 25
 text = "Restart"
-
-[node name="StartScreen" parent="." instance=ExtResource("15_h1m7h")]
-process_mode = 3
 
 [node name="Paused" parent="." instance=ExtResource("16_erwvk")]
 
