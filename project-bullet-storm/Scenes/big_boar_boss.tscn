@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dowyvh2eygq4n" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet-White.png" id="4_53wwp"]
 [ext_resource type="Texture2D" uid="uid://lcvobqmi83c7" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet-White.png" id="5_jw6yv"]
 [ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="6_3wx7c"]
+[ext_resource type="FontFile" uid="uid://dii3ac03ipw72" path="res://Art/fonts/PixelOperator8.ttf" id="7_2hktj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqrfr"]
 atlas = ExtResource("2_2tfma")
@@ -173,8 +174,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bttn"]
 size = Vector2(31.400002, 27.000004)
 
-[sub_resource type="FontVariation" id="FontVariation_onrbf"]
-
 [node name="Big_Boar_Boss" type="CharacterBody2D"]
 z_index = 5
 scale = Vector2(12, 9.875)
@@ -200,10 +199,10 @@ offset_right = 36.583324
 offset_bottom = -16.253164
 
 [node name="Label" type="Label" parent="."]
-offset_left = -16.416666
-offset_top = -34.227848
-offset_right = 16.583334
-offset_bottom = -22.227848
-theme_override_fonts/font = SubResource("FontVariation_onrbf")
+offset_left = -23.833332
+offset_top = -30.481012
+offset_right = 27.166668
+offset_bottom = -18.481012
+theme_override_fonts/font = ExtResource("7_2hktj")
 theme_override_font_sizes/font_size = 8
 text = "Big Boar"

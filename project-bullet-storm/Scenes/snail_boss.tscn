@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtg0u7h8h1bhn"]
+[gd_scene load_steps=24 format=3 uid="uid://dtg0u7h8h1bhn"]
 
 [ext_resource type="Script" uid="uid://d1ve1ddlh4sp" path="res://Scripts/snail_boss.gd" id="1_1wmyt"]
 [ext_resource type="Texture2D" uid="uid://dgxwdqv27ui1m" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/Hide-Sheet.png" id="2_bjv7g"]
 [ext_resource type="Texture2D" uid="uid://trrc0pim3a7l" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/all.png" id="3_yj0gd"]
 [ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="4_v8ncn"]
+[ext_resource type="FontFile" uid="uid://dii3ac03ipw72" path="res://Art/fonts/PixelOperator8.ttf" id="5_bjv7g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isgqn"]
 atlas = ExtResource("2_bjv7g")
@@ -158,9 +159,10 @@ offset_right = 37.5
 offset_bottom = -10.25
 
 [node name="Label" type="Label" parent="."]
-offset_left = -19.25
-offset_top = -27.875
-offset_right = 19.75
-offset_bottom = -15.875
+offset_left = -30.875
+offset_top = -23.125
+offset_right = 32.125
+offset_bottom = -11.125
+theme_override_fonts/font = ExtResource("5_bjv7g")
 theme_override_font_sizes/font_size = 8
 text = "Boss Snail"
