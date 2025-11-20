@@ -6,9 +6,25 @@ extends Area2D
 @onready var back_button = $Panel/BackButton
 
 var dialogue = [
-	"Hello there!",
-	"Welcome to this world.",
-    "Good luck on your journey!"
+	"Welcome, traveler…",
+	"This town stands alone 
+	against an endless nightmare. 
+	Night after night, monsters 
+	flood the streets,an unbroken 
+	tide of claws, steel, and fury. 
+	No rescuers are coming. 
+	No survivors remain to greet you.",
+	"But the world works on a 
+	simple law: the more you destroy, 
+	the stronger you become. 
+	Each enemy defeated feeds 
+	your resolve, sharpens your skill, 
+	and pushes you one step closer 
+	to standing against the monstrous 
+	leaders that control the swarm.",
+	"The siege will never stop… 
+	but neither must you. 
+	Fight, grow, and carve your legacy!"
 ]
 var current_index = 0
 

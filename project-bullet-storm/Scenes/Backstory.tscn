@@ -436,10 +436,10 @@ shape = SubResource("RectangleShape2D_4ca5p")
 
 [node name="Panel" type="Panel" parent="Objective/Area2D"]
 z_index = 15
-offset_left = 2529.0
-offset_top = -1244.0
-offset_right = 3370.0
-offset_bottom = -758.0
+offset_left = 2413.0
+offset_top = -1322.0
+offset_right = 3473.0
+offset_bottom = -728.0
 size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="Objective/Area2D/Panel"]
@@ -453,19 +453,19 @@ text = "Placeholder"
 
 [node name="NextButton" type="Button" parent="Objective/Area2D/Panel"]
 layout_mode = 0
-offset_left = 713.0
-offset_top = 495.0
-offset_right = 850.0
-offset_bottom = 608.0
+offset_left = 928.0
+offset_top = 599.0
+offset_right = 1065.0
+offset_bottom = 712.0
 theme_override_font_sizes/font_size = 40
 text = "Next"
 
 [node name="BackButton" type="Button" parent="Objective/Area2D/Panel"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 489.0
-offset_right = 135.0
-offset_bottom = 602.0
+offset_left = -4.0
+offset_top = 602.0
+offset_right = 133.0
+offset_bottom = 715.0
 theme_override_font_sizes/font_size = 40
 text = "Back
 "
