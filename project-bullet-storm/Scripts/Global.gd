@@ -47,7 +47,7 @@ func apply_upgrades_to_player(player):
 	player.max_health += addHealth
 	print("Player Max Health upgraded to: ", player.max_health)
 	if heal == true:
-		player.current_health += randi_range(5, player.max_health)
+		player.current_health += randi_range(5, 25)
 		if player.current_health > player.max_health: 
 			player.current_health = player.max_health
 		heal = false
