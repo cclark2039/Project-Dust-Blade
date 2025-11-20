@@ -165,4 +165,4 @@ offset_right = 32.125
 offset_bottom = -11.125
 theme_override_fonts/font = ExtResource("5_bjv7g")
 theme_override_font_sizes/font_size = 8
-text = "Boss Snail"
+text = "Gary"

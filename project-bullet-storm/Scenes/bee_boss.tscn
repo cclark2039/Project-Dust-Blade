@@ -141,4 +141,4 @@ offset_right = 25.125
 offset_bottom = -28.75
 theme_override_fonts/font = ExtResource("6_gh1io")
 theme_override_font_sizes/font_size = 8
-text = "Boss Bee"
+text = "Hopper"
