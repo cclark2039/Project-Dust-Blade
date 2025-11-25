@@ -9,4 +9,5 @@ James Traylor
 Om Patel
 
 How to Run: 
+Download repo as zip file,
 Open project.godot in Godot and press play. Use WASD keys to move and Space Bar to attack
