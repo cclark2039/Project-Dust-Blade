@@ -40,6 +40,7 @@ func reset():
 	addHealth = 0
 	dmgMulti = 0.0
 	attackSpeedMulti = 0.0
+	current_level = 1
 
 func apply_upgrades_to_player(player):
 	randomize()
