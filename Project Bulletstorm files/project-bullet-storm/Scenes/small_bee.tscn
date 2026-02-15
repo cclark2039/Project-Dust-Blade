@@ -1,0 +1,133 @@
+[gd_scene load_steps=20 format=3 uid="uid://cgo0joiktg56i"]
+
+[ext_resource type="Script" uid="uid://cg25ufc0aakke" path="res://Scripts/small_bee.gd" id="1_2jpai"]
+[ext_resource type="Texture2D" uid="uid://bfh1eggwugc7n" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Attack/Attack-Sheet.png" id="2_ae2kd"]
+[ext_resource type="Texture2D" uid="uid://bt81cn43tj3f5" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Fly/Fly-Sheet.png" id="3_s3rba"]
+[ext_resource type="Texture2D" uid="uid://dm6nmjo72xfxq" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Small Bee/Hit/Hit-Sheet.png" id="4_uvsrb"]
+[ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="5_s3rba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvtqh"]
+atlas = ExtResource("2_ae2kd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqja1"]
+atlas = ExtResource("2_ae2kd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tetnb"]
+atlas = ExtResource("2_ae2kd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jora0"]
+atlas = ExtResource("2_ae2kd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25jhk"]
+atlas = ExtResource("4_uvsrb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tpdt"]
+atlas = ExtResource("4_uvsrb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fly02"]
+atlas = ExtResource("4_uvsrb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elsnt"]
+atlas = ExtResource("4_uvsrb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6nbb"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwpil"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asqh8"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51mgm"]
+atlas = ExtResource("3_s3rba")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y6ol0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvtqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqja1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tetnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jora0")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25jhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tpdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fly02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elsnt")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6nbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwpil")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asqh8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51mgm")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2kd"]
+
+[node name="Small Bee" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 45
+motion_mode = 1
+script = ExtResource("1_2jpai")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_y6ol0")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ae2kd")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_s3rba")]
+offset_left = -18.333334
+offset_top = -34.333332
+offset_right = 17.999998
+offset_bottom = -29.666664

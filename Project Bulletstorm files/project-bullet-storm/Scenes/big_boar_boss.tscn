@@ -1,0 +1,208 @@
+[gd_scene load_steps=30 format=3 uid="uid://bug2fxorlj8xh"]
+
+[ext_resource type="Script" uid="uid://ipie6rsw04ln" path="res://Scripts/big_boar.gd" id="1_o1k86"]
+[ext_resource type="Texture2D" uid="uid://5kkcyyeiajh6" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-White.png" id="2_2tfma"]
+[ext_resource type="Texture2D" uid="uid://qedi5bjer2cb" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-White.png" id="3_n1skn"]
+[ext_resource type="Texture2D" uid="uid://dowyvh2eygq4n" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet-White.png" id="4_53wwp"]
+[ext_resource type="Texture2D" uid="uid://lcvobqmi83c7" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-Sheet-White.png" id="5_jw6yv"]
+[ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="6_3wx7c"]
+[ext_resource type="FontFile" uid="uid://dii3ac03ipw72" path="res://Art/fonts/PixelOperator8.ttf" id="7_2hktj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqrfr"]
+atlas = ExtResource("2_2tfma")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix0q"]
+atlas = ExtResource("2_2tfma")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06wm0"]
+atlas = ExtResource("2_2tfma")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g47mu"]
+atlas = ExtResource("2_2tfma")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6gi8"]
+atlas = ExtResource("3_n1skn")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwb0p"]
+atlas = ExtResource("3_n1skn")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp3hi"]
+atlas = ExtResource("3_n1skn")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5p5nm"]
+atlas = ExtResource("3_n1skn")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pixix"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bttn"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17jp5"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xst6f"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0psi"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h12c6"]
+atlas = ExtResource("4_53wwp")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lnwh"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n1a6"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v336t"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v63cs"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a51p0"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu3bi"]
+atlas = ExtResource("5_jw6yv")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pixix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqrfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06wm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g47mu")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6gi8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwb0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp3hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5p5nm")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pixix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bttn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17jp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xst6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0psi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h12c6")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lnwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n1a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v336t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v63cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a51p0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu3bi")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bttn"]
+size = Vector2(31.400002, 27.000004)
+
+[node name="Big_Boar_Boss" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(12, 9.875)
+collision_layer = 2
+collision_mask = 45
+motion_mode = 1
+script = ExtResource("1_o1k86")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pixix")
+animation = &"Walk"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.4999976, 2.4999995)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_0bttn")
+
+[node name="HealthBar" parent="." instance=ExtResource("6_3wx7c")]
+offset_left = -36.500004
+offset_top = -20.253164
+offset_right = 36.583324
+offset_bottom = -16.253164
+
+[node name="Label" type="Label" parent="."]
+offset_left = -23.833332
+offset_top = -30.481012
+offset_right = 27.166668
+offset_bottom = -18.481012
+theme_override_fonts/font = ExtResource("7_2hktj")
+theme_override_font_sizes/font_size = 8
+text = "Pumba"

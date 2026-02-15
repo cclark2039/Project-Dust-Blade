@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://r807belcp2o8"]
+
+[ext_resource type="Texture2D" uid="uid://cdoe25ugpwjqh" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="1_jxero"]
+[ext_resource type="Script" uid="uid://bisu75fyw6nd4" path="res://Scripts/Timer.gd" id="1_qdvrb"]
+[ext_resource type="Script" uid="uid://duaglma7vxaxd" path="res://Scripts/Score.gd" id="2_nf4gj"]
+[ext_resource type="Script" uid="uid://0g4b0e0vcqcw" path="res://Scripts/Level.gd" id="3_2246s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jxero"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_jxero")
+
+[node name="Timer" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 5.0
+offset_right = 192.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Time Alive: 000 "
+script = ExtResource("1_qdvrb")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 1110.0
+offset_right = 1275.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Score: 000000"
+script = ExtResource("2_nf4gj")
+
+[node name="Level" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -151.0
+offset_right = 151.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Level: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_2246s")
+
+[node name="Base01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(479, 329)
+texture = ExtResource("1_jxero")

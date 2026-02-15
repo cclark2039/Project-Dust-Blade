@@ -1,0 +1,168 @@
+[gd_scene load_steps=24 format=3 uid="uid://dtg0u7h8h1bhn"]
+
+[ext_resource type="Script" uid="uid://d1ve1ddlh4sp" path="res://Scripts/snail_boss.gd" id="1_1wmyt"]
+[ext_resource type="Texture2D" uid="uid://dgxwdqv27ui1m" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/Hide-Sheet.png" id="2_bjv7g"]
+[ext_resource type="Texture2D" uid="uid://trrc0pim3a7l" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Mob/Snail/all.png" id="3_yj0gd"]
+[ext_resource type="PackedScene" uid="uid://bs6eva6nr1r4n" path="res://Scenes/HealthBar.tscn" id="4_v8ncn"]
+[ext_resource type="FontFile" uid="uid://dii3ac03ipw72" path="res://Art/fonts/PixelOperator8.ttf" id="5_bjv7g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isgqn"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rcfg"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7q7l"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvj1i"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao3kc"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfup"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ss47"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1au3"]
+atlas = ExtResource("2_bjv7g")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_casb8"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqs8f"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dokh"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyufb"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdrdu"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vib7w"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2nmr"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4bte"]
+atlas = ExtResource("3_yj0gd")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_isgqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isgqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rcfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7q7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvj1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao3kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ss47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1au3")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_casb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqs8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dokh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyufb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdrdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vib7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2nmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4bte")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ae2kd"]
+size = Vector2(28, 22.666668)
+
+[node name="Snail_Boss" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(8, 8)
+collision_layer = 2
+collision_mask = 45
+motion_mode = 1
+script = ExtResource("1_1wmyt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_isgqn")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.43242577
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.6666667, 5)
+shape = SubResource("RectangleShape2D_ae2kd")
+
+[node name="HealthBar" parent="." instance=ExtResource("4_v8ncn")]
+offset_left = -36.875
+offset_top = -14.25
+offset_right = 37.5
+offset_bottom = -10.25
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.875
+offset_top = -23.125
+offset_right = 32.125
+offset_bottom = -11.125
+theme_override_fonts/font = ExtResource("5_bjv7g")
+theme_override_font_sizes/font_size = 8
+text = "Gary"

@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://wrrlustriaua"]
+
+[ext_resource type="Script" uid="uid://bln0yheyjo2aa" path="res://Scripts/TitleScreen.gd" id="1_8l4an"]
+[ext_resource type="Texture2D" uid="uid://bmeu3ns0jvoqi" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="1_uebgo"]
+[ext_resource type="Texture2D" uid="uid://cdoe25ugpwjqh" path="res://Art/Other Art Sets/Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="2_vmg2h"]
+
+[sub_resource type="SystemFont" id="SystemFont_n15yj"]
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_emot1"]
+default_font = SubResource("SystemFont_n15yj")
+
+[node name="Node" type="CanvasLayer"]
+script = ExtResource("1_8l4an")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 360.49994)
+scale = Vector2(2.6666665, 2.650735)
+texture = ExtResource("1_uebgo")
+
+[node name="Base01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 408)
+texture = ExtResource("2_vmg2h")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -134.5
+offset_right = 242.0
+offset_bottom = -65.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_emot1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 65
+text = "Dust Blade"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -30.0
+offset_right = 85.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 47.0
+offset_right = 82.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
